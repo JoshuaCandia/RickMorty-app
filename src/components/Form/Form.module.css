@@ -1,0 +1,122 @@
+.formContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+
+  background-color: white;
+
+  border-radius: 2%;
+}
+.titleLogin {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  font-family: "Creepster", cursive;
+  font-size: 45px;
+
+  margin-bottom: 10%;
+}
+.rick {
+  color: #9ee23e;
+  -webkit-text-stroke: 0.5px rgb(70, 70, 70);
+}
+
+.morty {
+  color: #e23e9e;
+  -webkit-text-stroke: 0.5px rgb(70, 70, 70);
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+}
+/* Login Title*/
+.login {
+  margin-bottom: 10%;
+  font-size: 30px;
+}
+
+/*Set General label value*/
+label{
+    font-size: 20px;
+    margin-bottom: 2%;
+    text-align: start;
+    width: 90%;
+}
+
+/* Email container*/
+.emailForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  min-width:380px;
+}
+
+.inputEmail {
+  text-align: start;
+
+  width: 90%;
+  margin-bottom: 5%;
+
+  border: none;
+  border-bottom: 1px solid rgb(70, 70, 70);
+
+  
+}
+
+.inputEmail:focus {
+  outline: none;
+}
+
+.errorEmailP {
+    width: 90%;
+  color: #e23e9e;
+}
+
+/* Password container*/
+.passwordForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 100%;
+}
+
+.inputPassword {
+  text-align: start;
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid rgb(70, 70, 70);
+}
+
+.inputPassword:focus {
+  outline: none;
+}
+
+.errorPasswordP {
+  color: #e23e9e;
+  width: 90%;
+}
+
+.btnLogin{
+    margin-top: 5%;
+    width: 100px;
+    height: 30px;
+
+    background-color: #9ee23e;
+
+    border-radius: 20px;
+    background-clip: padding-box;
+  }

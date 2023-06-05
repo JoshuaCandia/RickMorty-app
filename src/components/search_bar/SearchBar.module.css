@@ -1,0 +1,73 @@
+.widthSearhBar{
+  margin-top: 5%;
+  min-width: 98vw;
+  display: flex;
+  justify-content: center;
+}
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  border: 2px solid rgb(70, 70, 70);
+  height: 40px;
+  width: 400px;
+}
+
+
+/*Search Bar*/
+
+.searchBar {
+  background-color: transparent;
+  height: 37px;
+  width: 200px;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  color: #9ee23e;
+ 
+}
+
+.searchBar::placeholder {
+  text-align: center;
+  color: #9ee23e;
+}
+
+/*Button  Search Cards*/
+.divButtonSearch{
+  height: 100%;
+}
+.buttonSearch {
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  width: 100px;
+  color: #9ee23e;
+  border-right: 2px solid rgb(70, 70, 70);
+  border-left: 2px solid rgb(70, 70, 70);
+
+}
+
+.buttonSearch:hover {
+  background-color: #9ee23e;
+  color: black;
+}
+
+/*Button  CLose Cards*/
+.closeAllCards{
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 37px;
+  width: 100px;
+  color: #9ee23e;
+}
+
+.closeAllCards:hover{
+  background-color: #9ee23e;
+  color: black;
+}
+
+

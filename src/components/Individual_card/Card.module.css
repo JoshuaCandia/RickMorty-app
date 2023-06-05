@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+
+* {
+  /* Estilos globales */
+}
+
+.shadowCard {
+  margin-top: 20%;
+}
+
+.linkDetails {
+  text-decoration: none;
+  color: black;
+}
+/* General Container */
+.containerCard {
+  width: 300px;
+  margin-top: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  background-image: url(../../images/tree.png);
+  border-end-end-radius: 8%;
+  border-end-start-radius: 8%;
+  box-shadow: 0 0 30px 5px #9ee23e;
+}
+
+.card {
+  width: 100%;
+  border-radius: 1%;
+  height: fit-content;
+}
+
+/* Close button */
+.buttonCard {
+  width: 10%;
+  background-color: #ffff00;
+  border-radius: 25%;
+}
+
+/* Characters Images */
+.characterImage {
+  position: relative;
+  z-index: 1;
+  margin-left: 5%;
+  margin-top: 8%;
+  width: 80%;
+  height: 80%;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.portalBackground {
+  position: relative;
+  top: 20%;
+  left: -40%;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../images/portal.png);
+  background-size: cover;
+
+  border-radius: 50%;
+  box-shadow: 0 0 15px 15px #9ee23e;
+  rotate: 60deg;
+}
+
+/* Container of Characters Images */
+.backroundImage {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin-left: 10%;
+  height: 200px;
+}
+
+/* Shadow */
+
+.nameCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 14vh;
+  border-end-start-radius: 5%;
+  border-end-end-radius: 5%;
+  margin: 0 auto;
+  padding-top: 5%;
+  font-family: "Creepster", cursive;
+  text-align: center;
+  font-size: xx-large;
+  background-color: #f5fffa;
+  -webkit-text-stroke: 0.5px black;
+  color: white;
+  
+}
+
+/* Background of information */
+.backOfBack {
+  background-color: #f5fffa;
+  border-radius: 10%;
+}
+
+/* Characters Information */
+.infoCard {
+  display: flex;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #f5fffa;
+  margin: 0;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+/*Info section 
+.info {
+  display: flex;
+  justify-content: start;
+}
+
+.info2 {
+  display: flex;
+}
+
+.info3 {
+  display: flex;
+}
+
+
+.h2 {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.divH2Colored {
+  text-align: center;
+  background-color: black;
+  margin-top: 5%;
+  color: white;
+  width: 30%;
+  border-radius: 5%;
+  
+}
+.divH2NotColored {
+  padding-top: 5%;
+  text-align: center;
+}
+
+*/

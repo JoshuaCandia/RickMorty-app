@@ -1,0 +1,76 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: vw;
+  padding-top: 5px;
+}
+
+.ulNav {
+  list-style: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 15px;
+  margin-left:2%;
+  font-family: "Creepster", cursive;
+  font-size: x-large;
+}
+.aAbout {
+  color: white;
+  text-decoration: none;
+}
+.aHome {
+  color: white;
+  text-decoration: none;
+}
+
+.titlePageDiv {
+  display: flex;
+  margin-right:2%;
+}
+
+.nav .liAbout:hover {
+  color: #ff0000;
+  transform: translateY(10px);
+}
+.nav .liHome:hover {
+  transform: translateX(10px);
+}
+.nav .aHome:hover {
+  color: #0f0;
+}
+.nav .aAbout:hover {
+  color: #0f0;
+}
+
+.randomAndLogOut {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: "Creepster", cursive;
+  font-size: x-large;
+  list-style: none;
+}
+
+.liRandomChar {
+  color: white;
+  cursor: pointer;
+}
+
+.liRandomChar:hover {
+  color: #0f0;
+
+  transform: translateY(-10px);
+}
+
+.liLogOut {
+  color: white;
+}
+
+.liLogOut:hover {
+  cursor: pointer;
+  transform: translateX(-10px);
+  color: #0f0;
+}

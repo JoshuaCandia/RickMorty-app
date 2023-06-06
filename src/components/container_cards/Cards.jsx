@@ -7,7 +7,7 @@ export default function Cards({ characters, onClose,onCloseAllCards }) {
       {characters.map(
         ({ id, name, status, species, gender, origin, image,  }) => {
           return (
-            
+    
             <Card
               key={id}
               id={id}
@@ -18,7 +18,6 @@ export default function Cards({ characters, onClose,onCloseAllCards }) {
               gender={gender}
               image={image}
               onClose={onClose}
-              
             ></Card>
           );
         }

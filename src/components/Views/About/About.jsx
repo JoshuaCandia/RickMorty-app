@@ -75,9 +75,7 @@ const About = () => {
             </ul>
           </aside>
         </main>
-        {/* <div className={style.containerImg}>
-          <img className={style.aboutImg} src={aboutImg} alt="" />
-        </div> */}
+       
       </div>
     </>
   );

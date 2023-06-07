@@ -1,10 +1,11 @@
+/*Container nav */
 .nav {
   display: flex;
   justify-content: space-between;
   max-width: vw;
   padding-top: 5px;
 }
-
+/*ul nav */
 .ulNav {
   list-style: none;
 
@@ -13,10 +14,12 @@
   align-items: center;
 
   gap: 15px;
-  margin-left:2%;
+  margin-left: 2%;
   font-family: "Creepster", cursive;
   font-size: x-large;
 }
+
+/*Links Home , aboout and Favorites*/
 .aAbout {
   color: white;
   text-decoration: none;
@@ -25,26 +28,31 @@
   color: white;
   text-decoration: none;
 }
-
-.titlePageDiv {
-  display: flex;
-  margin-right:2%;
+.aFavorites {
+  color: white;
+  text-decoration: none;
 }
 
-.nav .liAbout:hover {
-  color: #ff0000;
+/*Li Home , aboout and Favorites hover*/
+.liAbout:hover {
   transform: translateY(10px);
 }
-.nav .liHome:hover {
+.liHome:hover {
   transform: translateX(10px);
 }
-.nav .aHome:hover {
-  color: #0f0;
+.liFavorites:hover {
+  transform: translateX(-10px);
 }
-.nav .aAbout:hover {
+
+.aAbout:hover {
   color: #0f0;
 }
 
+.aFavorites:hover {
+  color: #0f0;
+}
+
+/*Random and Logout Container*/
 .randomAndLogOut {
   display: flex;
   align-items: center;
@@ -58,19 +66,25 @@
   color: white;
   cursor: pointer;
 }
+.liLogOut {
+  color: white;
+}
 
+/*Hover Random and Logout */
 .liRandomChar:hover {
   color: #0f0;
 
   transform: translateY(-10px);
 }
 
-.liLogOut {
-  color: white;
-}
-
 .liLogOut:hover {
   cursor: pointer;
   transform: translateX(-10px);
   color: #0f0;
+}
+
+/*Title Nav*/
+.titlePageDiv {
+  display: flex;
+  margin-right: 2%;
 }

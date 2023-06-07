@@ -51,7 +51,7 @@ const Form = ({ login }) => {
             <h2 className={style.rick}>Rick</h2>
             <h2 className={style.morty}>Morty</h2>
           </div>
-      <form onSubmit={handleSubmit}>
+      <form name="form" onSubmit={handleSubmit}>
         <div className={style.loginContainer}>
           
           <h2 className={style.login}>Login</h2>

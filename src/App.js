@@ -6,12 +6,12 @@ import Cards from "./components/container_cards/Cards.jsx";
 import Nav from "./components/navBar/Nav";
 import SearchBar from "./components/search_bar/SearchBar";
 import Error404 from "./components/Error404/Error404";
-import Form from "./components/Form/Form";
 
 //Imports Views
 import Landing from "./components/Views/Landing/Landing";
 import About from "./components/Views/About/About";
 import Detail from "./components/Views/Detail/Detail";
+import Favorites from "./components/Views/Favorites/Favorites";
 
 //Import Hooks
 import React, { useState, useEffect } from "react";
@@ -23,7 +23,6 @@ import axios from "axios";
 //Login variables
 const email = "joshuacandia74@gmail.com";
 const password = "turroMantico123";
-
 
 function App() {
   //React hooks
@@ -37,7 +36,7 @@ function App() {
   const [access, setAccess] = useState(false);
 
   const login = (userData) => {
-    if (userData.password === password && userData.email === email ) {
+    if (userData.password === password && userData.email === email) {
       setAccess(true);
       navigate("/home");
     }
@@ -49,10 +48,10 @@ function App() {
   }, [access]);
 
   //LogOut function
-  const logOut =()=>{
-    setAccess(false)
-    navigate("/")
- }
+  const logOut = () => {
+    setAccess(false);
+    navigate("/");
+  };
 
   //Card search Function
   const onSearch = (id) => {
@@ -108,24 +107,26 @@ function App() {
       });
   };
 
-
-
   //App render
   return (
     <div className="App">
       {/*Nav nav and Title*/}
       {location.pathname !== "/" ? (
-        <Nav  logOut={logOut} randomChar={randomChar} onSearch={onSearch}></Nav>
+        <Nav logOut={logOut} randomChar={randomChar} onSearch={onSearch}></Nav>
       ) : null}
 
       {/*Search bar*/}
       {location.pathname === "/home" ? (
-        <SearchBar id={characters.id} onSearch={onSearch} onCloseAllCards={onCloseAllCards}></SearchBar>
+        <SearchBar
+          id={characters.id}
+          onSearch={onSearch}
+          onCloseAllCards={onCloseAllCards}
+        ></SearchBar>
       ) : null}
 
       {/*Views routes*/}
       <Routes>
-        <Route path="/" element={<Landing login={login}/>} />
+        <Route path="/" element={<Landing login={login} />} />
         <Route
           path="/home"
           element={
@@ -139,12 +140,12 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="*" element={<Error404 />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </div>
   );
 }
 
 export default App;
-
 
 //Copia de seguridad

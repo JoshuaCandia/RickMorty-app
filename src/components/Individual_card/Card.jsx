@@ -2,24 +2,53 @@
 import style from "./Card.module.css";
 
 //Import hooks
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-export default function Card({
-  id,
-  name,
-  status,
-  species,
-  gender,
-  origin,
-  image,
-  onClose,
-}) {
+import { addFav, removeFav } from "../../redux/actions";
+
+import { connect } from "react-redux";
+
+import { useState, useEffect } from "react";
+
+function Card({ id, name, image, onClose, addFav, removeFav, myFavorites }) {
+  const location = useLocation();
+  /* Estado Local*/
+  const [isFav, setIsFav] = useState(false);
+
+  useEffect(() => {
+    myFavorites.forEach((fav) => {
+      if (fav.id === id) {
+        setIsFav(true);
+      }
+    });
+  }, [myFavorites]);
+
+  const handleFavorite = () => {
+    if (isFav) {
+      setIsFav(false);
+      removeFav(id);
+    }
+    if (!isFav) {
+      setIsFav(true);
+      addFav({ id, name, image, onClose });
+    }
+  };
+
   return (
     <div className={style.containerCard}>
-      {/*Close Button*/}
-      <button className={style.buttonCard} onClick={() => onClose(id)}>
-        X
-      </button>
+      <div className={style.divButtons}>
+        {/*Close Button*/}
+        {location.pathname !== "/favorites" && (
+          <button className={style.buttonCard} onClick={() => onClose(id)}>
+            X
+          </button>
+        )}
+        {/* Button Fav */}
+
+        <button className={style.buttonFav} onClick={handleFavorite}>
+          {isFav ? "❤️" : "🤍"}
+        </button>
+      </div>
       {/*Card Container*/}
       <Link className={style.linkDetails} to={`/detail/${id}`}>
         <div className={style.card}>
@@ -46,22 +75,21 @@ export default function Card({
     </div>
   );
 }
+const mapStateToProps = (state) => {
+  return {
+    myFavorites: state.myFavorites,
+  };
+};
 
-/*
-         <div className={style.infoCard}>
-            <h2 className={style.h2}>
-              <div className={style.divH2Colored}>status</div>
-              <div className={style.divH2NotColored}>{status}</div>
-            </h2>
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addFav: (character) => {
+      dispatch(addFav(character));
+    },
+    removeFav: (id) => {
+      dispatch(removeFav(id));
+    },
+  };
+};
 
-            <h2 className={style.h2}>
-              <div className={style.divH2Colored}>Species</div>
-              <div className={style.divH2NotColored}>{species}</div>
-            </h2>
-
-            <h2 className={style.h2}>
-              <div className={style.divH2Colored}>Gender</div>
-              <div className={style.divH2NotColored}>{gender}</div>
-            </h2>
-          </div>
-*/
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

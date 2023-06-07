@@ -71,3 +71,43 @@
 }
 
 
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .searchContainer {
+    width: 310px;
+    
+  }
+
+  .searchBar {
+    width: 140px;
+    
+  }
+
+  .buttonSearch,
+  .closeAllCards {
+    width: 80px;
+  }
+  
+}
+
+/*-----------------------Media Querys-----------------------*/
+/* Estilos para pantallas medianas */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .searchContainer {
+    width: 350px;
+  }
+
+  .searchBar {
+    width: 180px;
+  }
+
+  .buttonSearch,
+  .closeAllCards {
+    width: 90px;
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media screen and (min-width: 1025px) {
+
+}

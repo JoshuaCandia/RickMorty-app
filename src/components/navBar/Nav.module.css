@@ -88,3 +88,47 @@
   display: flex;
   margin-right: 2%;
 }
+
+/*-----------------------Media Querys-------------------------------*/
+
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ulNav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-left: 0;
+  }
+
+  .randomAndLogOut {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/* Estilos para pantallas medianas */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .nav {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .ulNav {
+    gap: 10px;
+  }
+
+  .randomAndLogOut {
+    gap: 10px;
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media screen and (min-width: 1025px) {
+  /* Agrega aquí los estilos para pantallas grandes */
+}

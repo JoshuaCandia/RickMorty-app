@@ -26,3 +26,27 @@
   
 }
 /* -------------------------------------------- */
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .divContainerTitle {
+    display: none;
+  }
+
+}
+
+/* Estilos para pantallas medianas */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .divContainerTitle {
+    margin-right: 7%;
+  }
+
+  .titlePage {
+    font-size: 40px;
+    margin-top: 5%;
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media screen and (min-width: 1025px) {
+  
+}

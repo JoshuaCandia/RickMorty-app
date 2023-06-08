@@ -1,4 +1,4 @@
-import { ADD_FAV, REMOVE_FAV } from "./action-types";
+import { ADD_FAV, REMOVE_FAV,REMOVE_ALL_FAV } from "./action-types";
 
 export const addFav = (character) => {
   return {
@@ -13,3 +13,9 @@ export const removeFav = (id) => {
     payload: id,
   };
 };
+
+export const removeAllFav = () =>{
+  return{
+    type: REMOVE_ALL_FAV,
+  }
+}

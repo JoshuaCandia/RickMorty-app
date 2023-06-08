@@ -17,7 +17,7 @@ const Detail = () => {
   //Use Params
   const { id } = useParams();
 
-  //Use Effect
+  //Use Effect 
 useEffect(() => {
     axios(`https://rickandmortyapi.com/api/character/${id}`).then(
       ({ data }) => {

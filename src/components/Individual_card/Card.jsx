@@ -10,11 +10,12 @@ import { connect } from "react-redux";
 
 import { useState, useEffect } from "react";
 
-function Card({ id, name, image, onClose, addFav, removeFav, myFavorites }) {
+function Card({ id, name,status,species,gender,origin, image, onClose, addFav, removeFav, myFavorites }) {
   const location = useLocation();
-  /* Estado Local*/
+  /* Estado Local fav*/
   const [isFav, setIsFav] = useState(false);
 
+  /* Use Effect */
   useEffect(() => {
     myFavorites.forEach((fav) => {
       if (fav.id === id) {
@@ -23,6 +24,7 @@ function Card({ id, name, image, onClose, addFav, removeFav, myFavorites }) {
     });
   }, [myFavorites]);
 
+  /* Function button Fav*/
   const handleFavorite = () => {
     if (isFav) {
       setIsFav(false);
@@ -30,28 +32,32 @@ function Card({ id, name, image, onClose, addFav, removeFav, myFavorites }) {
     }
     if (!isFav) {
       setIsFav(true);
-      addFav({ id, name, image, onClose });
+      addFav({ id, name,status,species,gender,origin, image, onClose });
     }
   };
 
   return (
     <div className={style.containerCard}>
       <div className={style.divButtons}>
+
         {/*Close Button*/}
         {location.pathname !== "/favorites" && (
           <button className={style.buttonCard} onClick={() => onClose(id)}>
             X
           </button>
         )}
+
         {/* Button Fav */}
 
         <button className={style.buttonFav} onClick={handleFavorite}>
           {isFav ? "❤️" : "🤍"}
         </button>
       </div>
+
       {/*Card Container*/}
       <Link className={style.linkDetails} to={`/detail/${id}`}>
         <div className={style.card}>
+
           {/*Character image and background*/}
 
           <div className={style.backroundImage}>
@@ -69,18 +75,22 @@ function Card({ id, name, image, onClose, addFav, removeFav, myFavorites }) {
             <h2 className={style.nameCard}>{name}</h2>
 
             {/*Info de personajes*/}
+            
           </div>
         </div>
       </Link>
     </div>
   );
-}
+} 
+
+{/* Function Global State */}
 const mapStateToProps = (state) => {
   return {
     myFavorites: state.myFavorites,
   };
 };
 
+{/* Function Dispatch props */}
 const mapDispatchToProps = (dispatch) => {
   return {
     addFav: (character) => {

@@ -1,14 +1,17 @@
 //Import styles
 import style from "./Nav.module.css";
 
+import { removeAllFav } from "../../redux/actions";
+
 //Import child component
 import TitlePage from "../titlePage/TitlePage";
 
 //Import hooks
 import { Link, useLocation } from "react-router-dom";
+import { connect } from "react-redux";
 
 //Nav component
-export default function Nav({ randomChar, logOut }) {
+const Nav = ({ randomChar, logOut, removeAllFav }) => {
   const location = useLocation();
 
   return (
@@ -32,17 +35,21 @@ export default function Nav({ randomChar, logOut }) {
           </ul>
 
           <ul className={style.randomAndLogOut}>
+            {location.pathname.startsWith("/favorites") && (
+              <li onClick={removeAllFav} className={style.removeFavorites}>
+                Remove All Favorites
+              </li>
+            )}
             {location.pathname === "/home" && (
               <li onClick={randomChar} className={style.liRandomChar}>
                 Random Character
               </li>
             )}
-             {location.pathname !== "/favorites" && (
+            {location.pathname !== "/favorites" && (
               <Link className={style.aFavorites} to="/favorites">
                 <li className={style.liFavorites}>Favorites</li>
               </Link>
             )}
-            
           </ul>
           {/*Rick and Morty Title*/}
           <div className={style.titlePageDiv}>
@@ -52,4 +59,17 @@ export default function Nav({ randomChar, logOut }) {
       </div>
     </>
   );
+};
+
+{
+  /* Function Dispatch props */
 }
+const mapStateToProps = () => {};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeAllFav: () => dispatch(removeAllFav()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);

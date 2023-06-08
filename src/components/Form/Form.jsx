@@ -1,7 +1,6 @@
 //Import style
 import style from "./Form.module.css";
 
-
 //Import validation function
 import validation from "./modules/validation";
 
@@ -13,6 +12,7 @@ const Form = ({ login }) => {
   {
     /*States*/
   }
+
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -48,16 +48,17 @@ const Form = ({ login }) => {
   return (
     <div className={style.formContainer}>
       <div className={style.titleLogin}>
-            <h2 className={style.rick}>Rick</h2>
-            <h2 className={style.morty}>Morty</h2>
-          </div>
+        <h2 className={style.rick}>Rick</h2>
+        <h2 className={style.morty}>Morty</h2>
+      </div>
+
       <form name="form" onSubmit={handleSubmit}>
         <div className={style.loginContainer}>
-          
           <h2 className={style.login}>Login</h2>
 
           <div className={style.emailForm}>
             <label htmlFor="email">Email</label>
+
             <input
               className={style.inputEmail}
               name="email"
@@ -74,6 +75,7 @@ const Form = ({ login }) => {
 
           <div className={style.passwordForm}>
             <label htmlFor="text">Password</label>
+
             <input
               className={style.inputPassword}
               name="password"

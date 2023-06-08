@@ -1,5 +1,6 @@
 import style from "./Favorites.module.css";
 
+
 //Import child components
 import Card from "../../Individual_card/Card";
 

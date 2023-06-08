@@ -1,12 +1,16 @@
 /* Detail Container*/
 .detailDivContainer {
-  margin-top: 6%;
-  font-family: "Creepster", cursive;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  
+  margin-top: 6%;
+
+  font-family: "Creepster", cursive;
+
   height: 45vh;
   width: 100vw;
+
   background-color: transparent;
 }
 
@@ -14,12 +18,14 @@
 .ImgDetailContainer {
   display: flex;
   justify-content: center;
+
   width: 35vw;
 }
 
 .imgDetail {
   border-radius: 50%;
   width: 50%;
+
   box-shadow: 0 0 30px 5px white;
 }
 
@@ -28,8 +34,11 @@
 .nameDetailChar{
 display: flex;
 justify-content: center;
+
 color :white;
+
 font-size: 50px;
+
 margin-bottom: 5%;
 
 }
@@ -44,22 +53,27 @@ list-style: none;
 }
 
 .ulInfo {
-  width: 50vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  width: 50vw;
+  
   gap: 20px;
+
   list-style: none;
  
-  
   font-size: xx-large;
 }
 
 .liInfo {
   color: #BEE5FE;
+
   background-color: #ffff00;
+
   width: 50%;
+
   -webkit-text-stroke: 2px black;
 }
 
@@ -69,5 +83,6 @@ list-style: none;
 }
 .pngImg {
   width: 25%;
+  
   height: 30vh;
 }

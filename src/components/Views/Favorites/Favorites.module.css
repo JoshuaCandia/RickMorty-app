@@ -1,3 +1,13 @@
+.generalContainer{
+
+}
+
+.divSelector{
+    display: flex;
+    justify-content: center;
+  }
+
+
 .favoritesContainer{
     display: grid;
     justify-content: center;
@@ -7,11 +17,8 @@
     gap: 16px;
     max-width: 90vw;
     margin-left: 5%;
-
-    opacity: 1;
-    transition: opacity 0.3s ease-out;
 }
 
-.favoritesContainer.fade-out {
-    opacity: 0;
-  }
+
+
+ 

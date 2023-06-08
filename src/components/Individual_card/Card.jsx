@@ -1,16 +1,17 @@
-//Import Styles
-import style from "./Card.module.css";
+// Import Styles
+import style from './Card.module.css';
 
-//Import hooks
-import { Link, useLocation } from "react-router-dom";
+// Import hooks
+import {Link, useLocation} from 'react-router-dom';
 
-import { addFav, removeFav } from "../../redux/actions";
+import {addFav, removeFav} from '../../redux/actions';
 
-import { connect } from "react-redux";
+import {connect} from 'react-redux';
 
-import { useState, useEffect } from "react";
+import {useState, useEffect} from 'react';
 
-function Card({ id, name,status,species,gender,origin, image, onClose, addFav, removeFav, myFavorites }) {
+// eslint-disable-next-line require-jsdoc
+function Card({id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites}) {
   const location = useLocation();
   /* Estado Local fav*/
   const [isFav, setIsFav] = useState(false);
@@ -32,7 +33,7 @@ function Card({ id, name,status,species,gender,origin, image, onClose, addFav, r
     }
     if (!isFav) {
       setIsFav(true);
-      addFav({ id, name,status,species,gender,origin, image, onClose });
+      addFav({id, name, status, species, gender, origin, image, onClose});
     }
   };
 
@@ -40,8 +41,8 @@ function Card({ id, name,status,species,gender,origin, image, onClose, addFav, r
     <div className={style.containerCard}>
       <div className={style.divButtons}>
 
-        {/*Close Button*/}
-        {location.pathname !== "/favorites" && (
+        {/* Close Button*/}
+        {location.pathname !== '/favorites' && (
           <button className={style.buttonCard} onClick={() => onClose(id)}>
             X
           </button>
@@ -50,38 +51,38 @@ function Card({ id, name,status,species,gender,origin, image, onClose, addFav, r
         {/* Button Fav */}
 
         <button className={style.buttonFav} onClick={handleFavorite}>
-          {isFav ? "❤️" : "🤍"}
+          {isFav ? '❤️' : '🤍'}
         </button>
       </div>
 
-      {/*Card Container*/}
+      {/* Card Container*/}
       <Link className={style.linkDetails} to={`/detail/${id}`}>
         <div className={style.card}>
 
-          {/*Character image and background*/}
+          {/* Character image and background*/}
 
           <div className={style.backroundImage}>
-            {/*SweetAlert image*/}
+            {/* SweetAlert image*/}
 
             <img src={image} alt="" className={style.characterImage} />
-            {/*Background portal*/}
+            {/* Background portal*/}
 
             <div className={style.portalBackground}></div>
           </div>
 
           <div className={style.backOfBack}>
-            {/*Nombre de Personaje*/}
+            {/* Nombre de Personaje*/}
 
             <h2 className={style.nameCard}>{name}</h2>
 
-            {/*Info de personajes*/}
-            
+            {/* Info de personajes*/}
+
           </div>
         </div>
       </Link>
     </div>
   );
-} 
+}
 
 {/* Function Global State */}
 const mapStateToProps = (state) => {

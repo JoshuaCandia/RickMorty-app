@@ -21,7 +21,7 @@ import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
 //Login variables
-const email = "joshuacandia74@gmail.com";
+const email = "ciudadanoPromedio@gmail.com";
 const password = "turroMantico123";
 
 function App() {

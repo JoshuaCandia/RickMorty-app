@@ -1,17 +1,29 @@
 // Import Styles
-import style from './Card.module.css';
+import style from "./Card.module.css";
 
 // Import hooks
-import {Link, useLocation} from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
 
-import {addFav, removeFav} from '../../redux/actions';
+import { addFav, removeFav } from "../../redux/actions";
 
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from "react";
 
 // eslint-disable-next-line require-jsdoc
-function Card({id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites}) {
+function Card({
+  id,
+  name,
+  status,
+  species,
+  gender,
+  origin,
+  image,
+  onClose,
+  addFav,
+  removeFav,
+  myFavorites,
+}) {
   const location = useLocation();
   /* Estado Local fav*/
   const [isFav, setIsFav] = useState(false);
@@ -33,16 +45,15 @@ function Card({id, name, status, species, gender, origin, image, onClose, addFav
     }
     if (!isFav) {
       setIsFav(true);
-      addFav({id, name, status, species, gender, origin, image, onClose});
+      addFav({ id, name, status, species, gender, origin, image, onClose });
     }
   };
 
   return (
     <div className={style.containerCard}>
       <div className={style.divButtons}>
-
         {/* Close Button*/}
-        {location.pathname !== '/favorites' && (
+        {location.pathname !== "/favorites" && (
           <button className={style.buttonCard} onClick={() => onClose(id)}>
             X
           </button>
@@ -51,14 +62,13 @@ function Card({id, name, status, species, gender, origin, image, onClose, addFav
         {/* Button Fav */}
 
         <button className={style.buttonFav} onClick={handleFavorite}>
-          {isFav ? '❤️' : '🤍'}
+          {isFav ? "❤️" : "🤍"}
         </button>
       </div>
 
       {/* Card Container*/}
       <Link className={style.linkDetails} to={`/detail/${id}`}>
         <div className={style.card}>
-
           {/* Character image and background*/}
 
           <div className={style.backroundImage}>
@@ -76,7 +86,6 @@ function Card({id, name, status, species, gender, origin, image, onClose, addFav
             <h2 className={style.nameCard}>{name}</h2>
 
             {/* Info de personajes*/}
-
           </div>
         </div>
       </Link>
@@ -84,14 +93,18 @@ function Card({id, name, status, species, gender, origin, image, onClose, addFav
   );
 }
 
-{/* Function Global State */}
+{
+  /* Function Global State */
+}
 const mapStateToProps = (state) => {
   return {
     myFavorites: state.myFavorites,
   };
 };
 
-{/* Function Dispatch props */}
+{
+  /* Function Dispatch props */
+}
 const mapDispatchToProps = (dispatch) => {
   return {
     addFav: (character) => {

@@ -36,7 +36,10 @@ function App() {
   const [access, setAccess] = useState(false);
 
   const login = (userData) => {
-    if (userData.password === password && userData.email === email) {
+    if (
+      userData.password === password &&
+      userData.email.toLowerCase() === email.toLowerCase()
+    ) {
       setAccess(true);
       navigate("/home");
     }
@@ -55,8 +58,9 @@ function App() {
 
   //Card search Function
   const onSearch = (id) => {
-    axios(`https://rickandmortyapi.com/api/character/${id}`).then(
+    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
       ({ data }) => {
+        console.log(data);
         if (
           data.name &&
           characters.find((char) => char.id === data.id) === undefined

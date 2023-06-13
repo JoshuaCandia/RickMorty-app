@@ -72,10 +72,10 @@ const About = () => {
               <li>CSS</li>
               <li>Javascript</li>
               <li>React</li>
+              <li>Redux</li>
             </ul>
           </aside>
         </main>
-       
       </div>
     </>
   );

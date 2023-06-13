@@ -61,15 +61,10 @@ const Nav = ({ randomChar, logOut, removeAllFav }) => {
   );
 };
 
-{
-  /* Function Dispatch props */
-}
-const mapStateToProps = () => {};
-
 const mapDispatchToProps = (dispatch) => {
   return {
     removeAllFav: () => dispatch(removeAllFav()),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Nav);
+export default connect(null, mapDispatchToProps)(Nav);

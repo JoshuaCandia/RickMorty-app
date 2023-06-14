@@ -27,7 +27,10 @@ const reducer = (state = initialState, { type, payload }) => {
     case REMOVE_FAV:
       return {
         ...state,
-        myFavorites: state.myFavorites.filter((fav) => fav.id !== payload),
+        myFavorites: state.allCharactersFav.filter((fav) => fav.id !== payload),
+        allCharactersFav: state.allCharactersFav.filter(
+          (fav) => fav.id !== payload
+        ),
       };
 
     case REMOVE_ALL_FAV:
@@ -44,7 +47,7 @@ const reducer = (state = initialState, { type, payload }) => {
         return {
           ...state,
           myFavorites: state.allCharactersFav,
-        };
+        }; // Esto es para que cada vez que entro a la ruta /favorites se muestren todos los personajes favoritos
       }
       return {
         ...state,

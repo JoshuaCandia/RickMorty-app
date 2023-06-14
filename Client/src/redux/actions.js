@@ -22,7 +22,7 @@ export const removeFav = (id) => {
 
 export const removeAllFav = () => {
   return {
-    type: FILTER
+    type: REMOVE_ALL_FAV
   }
 }
 

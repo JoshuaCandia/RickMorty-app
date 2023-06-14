@@ -37,10 +37,12 @@ const Favorites = ({ myFavorites }) => {
             <option value="D">Descendent</option>
           </select>
           <select className={style.selectGender} onChange={handleFilter}>
+            <option disabled selected value=''>Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Genderless">Genderless</option>
             <option value="unknown">Unknown</option>
+            <option value="">All</option>
           </select>
         </div>
       </>

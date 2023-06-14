@@ -58,9 +58,8 @@ function App() {
 
   //Card search Function
   const onSearch = (id) => {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-      ({ data }) => {
-        console.log(data);
+    axios(`http://localhost:3001/rickandmorty/character/${id}`)
+      .then(({ data }) => {
         if (
           data.name &&
           characters.find((char) => char.id === data.id) === undefined
@@ -70,10 +69,10 @@ function App() {
           data.name &&
           characters.find((char) => char.id === data.id) !== undefined
         ) {
-          window.alert("Ya se encuentra en pantalla la card!");
+          window.alert("¡La tarjeta ya se encuentra en pantalla!");
         }
-      }
-    );
+      })
+      .catch((error) => console.error("Error: ", error));
   };
 
   //Close Cards Function
@@ -93,7 +92,7 @@ function App() {
   //Random Character Function
   const randomChar = () => {
     const randomNumber = Math.floor(Math.random() * 826 + 1);
-    const url = `https://rickandmortyapi.com/api/character/${randomNumber}`;
+    const url = `http://localhost:3001/rickandmorty/character/${randomNumber}`;
 
     fetch(url)
       .then((res) => res.json())
@@ -151,5 +150,3 @@ function App() {
 }
 
 export default App;
-
-//Copia de seguridad

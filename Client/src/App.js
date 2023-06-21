@@ -20,10 +20,6 @@ import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 //Import Axios
 import axios from "axios";
 
-//Login variables
-const email = "ciudadanoPromedio@gmail.com";
-const password = "turroMantico123";
-
 function App() {
   //React hooks
   const location = useLocation();
@@ -35,15 +31,15 @@ function App() {
   //State login
   const [access, setAccess] = useState(false);
 
-  const login = (userData) => {
-    if (
-      userData.password === password &&
-      userData.email.toLowerCase() === email.toLowerCase()
-    ) {
-      setAccess(true);
-      navigate("/home");
-    }
-  };
+  function login(userData) {
+    const { email, password } = userData;
+    const URL = "http://localhost:3001/rickandmorty/login/";
+    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+      const { access } = data;
+      setAccess(data);
+      access && navigate("/home");
+    });
+  }
 
   //Use effect navigate
   useEffect(() => {
@@ -78,7 +74,7 @@ function App() {
   //Close Cards Function
   const onClose = (id) => {
     const charactersFiltered = characters.filter(
-      (character) => character.id !== Number(id)
+      (character) => character.id !== id
     );
     setCharacters(charactersFiltered);
   };

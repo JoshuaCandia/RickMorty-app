@@ -7,46 +7,32 @@ import {
 } from "./action-types";
 
 const initialState = {
-  allCharactersFav: [],
+  allCharacters: [],
   myFavorites: [],
 };
 
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ADD_FAV:
-      if (state.myFavorites.some((fav) => fav.id === payload.id)) {
-        return state;
-      }
-
-      return {
-        ...state,
-        myFavorites: [...state.myFavorites, payload],
-        allCharactersFav: [...state.allCharactersFav, payload],
-      };
+      return { ...state, myFavorites: payload, allCharacters: payload };
 
     case REMOVE_FAV:
-      return {
-        ...state,
-        myFavorites: state.allCharactersFav.filter((fav) => fav.id !== payload),
-        allCharactersFav: state.allCharactersFav.filter(
-          (fav) => fav.id !== payload
-        ),
-      };
+      return { ...state, myFavorites: payload };
 
     case REMOVE_ALL_FAV:
       return {
         myFavorites: [],
-        allCharactersFav: [],
+        allCharacters: [],
       };
 
     case FILTER:
-      const allCharactersFiltered = state.allCharactersFav.filter(
+      const allCharactersFiltered = state.allCharacters.filter(
         (character) => character.gender === payload
       );
       if (payload === "") {
         return {
           ...state,
-          myFavorites: state.allCharactersFav,
+          myFavorites: state.allCharacters,
         }; // Esto es para que cada vez que entro a la ruta /favorites se muestren todos los personajes favoritos
       }
       return {
@@ -55,7 +41,7 @@ const reducer = (state = initialState, { type, payload }) => {
       };
 
     case ORDER:
-      const allCharactersAllFavCopy = [...state.allCharactersFav];
+      const allCharactersAllFavCopy = [...state.allCharacters];
       const updatedFavorites = state.myFavorites.filter((fav) =>
         allCharactersAllFavCopy.some((char) => char.id === fav.id)
       );

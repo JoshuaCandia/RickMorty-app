@@ -1,18 +1,15 @@
-//Import style
+// Importar estilos
 import style from "./Form.module.css";
 
-//Import validation function
+// Importar función de validación
 import validation from "./modules/validation";
 
-//Import Hooks
+// Importar Hooks
 import { useState } from "react";
 
-//Form component
+// Componente Form
 const Form = ({ login }) => {
-  {
-    /*States*/
-  }
-
+  // Estados
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -23,23 +20,22 @@ const Form = ({ login }) => {
     password: "",
   });
 
-  //Handle Change State
+  // Manejar cambio de estado
   const handleUserData = (event) => {
-    setUserData({
-      ...userData,
-      [event.target.name]: event.target.value,
-    });
+    const { name, value } = event.target;
 
-    setErrors(
-      validation({
-        ...userData,
-        [event.target.name]: event.target.value,
-      })
-    );
+    setUserData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: validation({ ...userData, [name]: value })[name],
+    }));
   };
 
-  //Handle Submit
-
+  // Manejar envío del formulario
   const handleSubmit = (event) => {
     event.preventDefault();
     login(userData);
@@ -60,13 +56,14 @@ const Form = ({ login }) => {
             <label htmlFor="email">Email</label>
 
             <input
+              autoComplete="on"
               className={style.inputEmail}
               name="email"
               onChange={handleUserData}
               value={userData.email}
               type="email"
               placeholder="Insert email"
-              id=""
+              id="email"
             />
             {errors.email && (
               <p className={style.errorEmailP}>{errors.email}</p>
@@ -74,16 +71,17 @@ const Form = ({ login }) => {
           </div>
 
           <div className={style.passwordForm}>
-            <label htmlFor="text">Password</label>
+            <label htmlFor="password">Password</label>
 
             <input
+              autoComplete="on"
               className={style.inputPassword}
               name="password"
               onChange={handleUserData}
               value={userData.password}
-              type="text"
+              type="password"
               placeholder="Insert password"
-              id=""
+              id="password"
             />
             {errors.password && (
               <p className={style.errorPasswordP}>{errors.password}</p>
@@ -98,5 +96,3 @@ const Form = ({ login }) => {
 };
 
 export default Form;
-
-//Aca no esta roto y funciona bien con modules

@@ -21,6 +21,7 @@ export default function SearchBar(props) {
           <input
             type="search"
             value={id}
+            name="inputSearchBar"
             className={style.searchBar}
             onChange={handleChange}
             placeholder="Search Characters here..."

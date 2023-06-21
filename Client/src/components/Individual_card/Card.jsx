@@ -35,7 +35,7 @@ function Card({
         setIsFav(true);
       }
     });
-  }, [myFavorites]);
+  }, [myFavorites, id]);
 
   /* Function button Fav*/
   const handleFavorite = () => {

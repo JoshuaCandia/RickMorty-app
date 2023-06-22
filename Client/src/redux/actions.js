@@ -8,8 +8,10 @@ import {
   ORDER,
 } from "./action-types";
 
+const localhost = "http://localhost:3001/rickandmorty/";
+
 export const addFav = (character) => {
-  const endpoint = "http://localhost:3001/rickandmorty/fav";
+  const endpoint = `${localhost}/fav`;
   return (dispatch) => {
     axios.post(endpoint, character).then(({ data }) => {
       return dispatch({
@@ -21,7 +23,7 @@ export const addFav = (character) => {
 };
 
 export const removeFav = (id) => {
-  const endpoint = `http://localhost:3001/rickandmorty/fav/${id}`;
+  const endpoint = `${localhost}fav/${id}`;
   return (dispatch) => {
     axios.delete(endpoint).then(({ data }) => {
       return dispatch({
@@ -33,8 +35,14 @@ export const removeFav = (id) => {
 };
 
 export const removeAllFav = () => {
-  return {
-    type: REMOVE_ALL_FAV,
+  const endpoint = `${localhost}fav`;
+  return (dispatch) => {
+    axios.delete(endpoint).then(({ data }) => {
+      return dispatch({
+        type: REMOVE_ALL_FAV,
+        payload: data,
+      });
+    });
   };
 };
 

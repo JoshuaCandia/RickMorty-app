@@ -6,7 +6,7 @@ const login = (req, res) => {
     (user) => user.email === email && user.password === password
   );
   if (user) res.status(200).json({ access: true });
-  res.status(200).json({ access: false });
+  else res.status(200).json({ access: false });
 };
 
 module.exports = login;

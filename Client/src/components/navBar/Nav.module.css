@@ -37,6 +37,9 @@
 
   text-decoration: none;
 }
+li {
+  transition: all 0.2s ease-in-out;
+}
 
 /*Li Home , aboout and Favorites hover*/
 .liAbout:hover {
@@ -47,6 +50,9 @@
 }
 .liLogOut {
   color: white;
+}
+.aHome:hover{
+  color: #0f0;
 }
 
 .aAbout:hover {

@@ -57,9 +57,7 @@ useEffect(() => {
       ) : (
         <h3>Loading......</h3>
       )}
-      <div className={style.pngContainer}>
-        <img className={style.pngImg} src={png} alt="" />
-      </div>
+      
     </div>
   );
 };

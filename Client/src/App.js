@@ -31,15 +31,23 @@ function App() {
   //State login
   const [access, setAccess] = useState(false);
 
-  function login(userData) {
-    const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
-    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+  const login = async (userData) => {
+    try {
+      const { email, password } = userData;
+      const URL = "http://localhost:3001/rickandmorty/login/";
+
+      const { data } = await axios.get(
+        URL + `?email=${email}&password=${password}`
+      );
       const { access } = data;
+
+      if (!access) throw new Error("Incorrect email or password");
       setAccess(data);
       access && navigate("/home");
-    });
-  }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
 
   //Use effect navigate
   useEffect(() => {
@@ -53,22 +61,20 @@ function App() {
   };
 
   //Card search Function
-  const onSearch = (id) => {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`)
-      .then(({ data }) => {
-        if (
-          data.name &&
-          characters.find((char) => char.id === data.id) === undefined
-        ) {
-          setCharacters([...characters, data]);
-        } else if (
-          data.name &&
-          characters.find((char) => char.id === data.id) !== undefined
-        ) {
-          window.alert("¡La tarjeta ya se encuentra en pantalla!");
-        }
-      })
-      .catch((error) => console.error("Error: ", error));
+  const onSearch = async (id) => {
+    try {
+      const { data } = await axios(
+        `http://localhost:3001/rickandmorty/character/${id}`
+      ); //destructuring de response
+
+      if (data.name && !characters.find((char) => char.id === data.id)) {
+        setCharacters([...characters, data]);
+      } else if (data.name && characters.find((char) => char.id === data.id)) {
+        window.alert("The card is already on screen!");
+      }
+    } catch (error) {
+      alert("The character with that ID was not found.");
+    }
   };
 
   //Close Cards Function

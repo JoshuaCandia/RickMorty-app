@@ -1,24 +1,37 @@
-.generalContainer{
-
+.generalContainer {
 }
 
-.divSelector{
-    display: flex;
-    justify-content: center;
-  }
-
-
-.favoritesContainer{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    
-    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
-    gap: 16px;
-    max-width: 90vw;
-    margin-left: 5%;
+.divSelector {
+  display: flex;
+  justify-content: center;
 }
 
+.favoritesContainer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+  gap: 16px;
+  max-width: 90vw;
+  margin-left: 5%;
+}
 
- 
+.customSelect {
+  margin: 20px 10px;
+  width: 200px;
+  height: 30px;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  
+  box-shadow: 0 0 5px 5px #fffefe
+}
+
+.customSelect:focus {
+  outline: none;
+  
+  box-shadow: 0 0 5px 5px #9ee23e
+}

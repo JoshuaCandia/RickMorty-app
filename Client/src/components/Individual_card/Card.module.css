@@ -113,12 +113,6 @@
 /* Shadow */
 
 .nameCard {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 14vh;
-
   border-end-start-radius: 5%;
   border-end-end-radius: 5%;
 
@@ -130,16 +124,35 @@
   font-size: xx-large;
 
   background-color: #f5fffa;
-  color: white;
+  color: #9ee23e;
 
   -webkit-text-stroke: 0.5px black;
+}
+.idCard {
+  border-end-start-radius: 5%;
+  border-end-end-radius: 5%;
+
+  margin: 0 auto;
+  padding-top: 2%;
+  padding-left: 80%;
+
+  font-family: "Creepster", cursive;
+  text-align: center;
+  font-size: large;
+
+  background-color: #f5fffa;
+
+
+
 }
 
 /* Background of information */
 .backOfBack {
+  display: flex;
+  flex-direction: column;
   background-color: #f5fffa;
-
   border-radius: 10%;
+  height: 14vh;
 }
 
 /* Characters Information */

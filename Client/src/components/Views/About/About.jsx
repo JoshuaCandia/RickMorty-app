@@ -13,67 +13,41 @@ const About = () => {
 
         <main className={style.mainAbout}>
           <div className={style.textAbout}>
-            <h3>
-              Soy un estudiante de Henry, y en este desafío estuve desarrollando
-              una página funcional con las tecnologías que pude aprender en el
-              bootcamp.
-            </h3>
-
-            <h3>
-              ¡Bienvenidos al proyecto integrador de React :" La Locura de Rick
-              and Morty de: Joshua Candia"! Prepárense para sumergirse en el
-              fascinante universo de esta serie animada repleta de humor absurdo
-              y aventuras intergalácticas.
-            </h3>
-
-            <h3>
-              ¿Qué onda con este proyecto? ¡Te cuento! Armé una aplicación web
-              con React, donde vas a poder explorar y descubrir todo sobre tus
-              personajes favoritos de "Rick and Morty". Desde Rick Sánchez, el
-              científico alcohólico y re loco, hasta Morty Smith, su nieto que
-              se mete en quilombos pero tiene buen corazón. Vas a poder conocer
-              a todos los personajes icónicos de la serie y conseguir
-              información detallada sobre ellos, como su especie, género, origen
-              y en qué episodios aparecen.
-            </h3>
-
-            <h3>
-              Este proyecto fue una aventura de programación re emocionante,
-              donde apliqué los conceptos y técnicas que aprendí en React. Usé
-              componentes funcionales, hooks, el enrutamiento con React Router y
-              me integré con una API para conseguir los datos de "Rick and
-              Morty".
-            </h3>
-
-            <h3>
-              Espero que te diviertas navegando en este proyecto y la pases
-              bomba tanto como yo cuando lo armé. ¡No dudes en dejar tus
-              comentarios y sugerencias! ¡Que la locura de "Rick and Morty" te
-              acompañe en esta experiencia, pibe!
-            </h3>
-
-            <div className={style.donateDiv}>
-              <h5>
-                PD: Si sos un rarito de internet fan de Rick y Morty te adjunto
-                mi CVU para que me dones:
-              </h5>
-
-              <div className={style.cvuDiv}>
-                <h6>0000003100033555027822</h6>
-                <h6>Gracias :D</h6>
-              </div>
+            <div className={style.h3About}>
+              <h3>
+                ¡Bienvenidos al proyecto integrador de React "La Locura de Rick
+                and Morty de Joshua Candia"! Explora una aplicación web creada
+                con React que te permite conocer y obtener información detallada
+                sobre los personajes icónicos de la serie animada "Rick and
+                Morty". A través de componentes funcionales, hooks y el
+                enrutamiento con React Router, podrás sumergirte en el
+                fascinante universo de humor absurdo y aventuras
+                intergalácticas. ¡Disfruta de esta experiencia y no olvides
+                dejar tus comentarios y sugerencias para mejorar el proyecto!
+              </h3>
             </div>
           </div>
 
           <aside className={style.asideAbout}>
             <h2>Tecnologías utilizadas:</h2>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Javascript</li>
-              <li>React</li>
-              <li>Redux</li>
-            </ul>
+
+            <div className={style.asideTech}>
+              <ul>
+                <h3>Frontend</h3>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+                <li>React</li>
+                <li>Redux</li>
+              </ul>
+
+              <ul>
+                <h3>Backend</h3>
+                <li>NodeJs</li>
+                <li>Express</li>
+                <li>Jest</li>
+              </ul>
+            </div>
           </aside>
         </main>
       </div>

@@ -7,7 +7,7 @@ import { removeAllFav } from "../../redux/actions";
 import TitlePage from "../titlePage/TitlePage";
 
 //Import hooks
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation,NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
 //Nav component
@@ -21,13 +21,13 @@ const Nav = ({ randomChar, logOut, removeAllFav }) => {
         {/* Nav Container */}
         <nav className={style.nav}>
           <ul className={style.ulNav}>
-            <Link className={style.aHome} to="/home">
+            <NavLink className={style.aHome} to="/home">
               <li className={style.liHome}>Home</li>
-            </Link>
+            </NavLink>
 
-            <Link className={style.aAbout} to="/about">
+            <NavLink className={style.aAbout} to="/about">
               <li className={style.liAbout}>About</li>
-            </Link>
+            </NavLink>
 
             <li onClick={() => logOut()} className={style.liLogOut}>
               Log Out

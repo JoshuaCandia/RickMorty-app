@@ -33,13 +33,15 @@ const Favorites = ({ myFavorites }) => {
     <div className={style.generalContainer}>
       <>
         <div className={style.divSelector}>
-          <select className={style.selectAorD} onChange={handleOrder}>
-            <option value="A">Ascendent</option>
+          <select className={style.customSelect} onChange={handleOrder}>
+            <option value="A" defaultValue>
+              Ascendent
+            </option>
             <option value="D">Descendent</option>
           </select>
 
-          <select className={style.selectGender} onChange={handleFilter}>
-            <option disabled selected value="">
+          <select className={style.customSelect} onChange={handleFilter}>
+            <option disabled defaultValue="">
               Gender
             </option>
             <option value="Male">Male</option>

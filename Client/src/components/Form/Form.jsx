@@ -40,6 +40,8 @@ const Form = ({ login }) => {
     event.preventDefault();
     login(userData);
   };
+  let errorEmail = "";
+  let errorPassword = "";
 
   return (
     <div className={style.formContainer}>
@@ -65,9 +67,8 @@ const Form = ({ login }) => {
               placeholder="Insert email"
               id="email"
             />
-            {errors.email && (
-              <p className={style.errorEmailP}>{errors.email}</p>
-            )}
+            <p className={style.errorPassword}>{errorPassword}</p>
+            {errors.password && (errorPassword = errors.password)}
           </div>
 
           <div className={style.passwordForm}>
@@ -83,9 +84,8 @@ const Form = ({ login }) => {
               placeholder="Insert password"
               id="password"
             />
-            {errors.password && (
-              <p className={style.errorPasswordP}>{errors.password}</p>
-            )}
+            <p className={style.errorEmailP}>{errorEmail}</p>
+            {errors.email && (errorEmail = errors.email)}
           </div>
 
           <button className={style.btnLogin}>Ingresar</button>

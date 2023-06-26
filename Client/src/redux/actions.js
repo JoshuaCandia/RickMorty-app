@@ -11,25 +11,28 @@ import {
 const localhost = "http://localhost:3001/rickandmorty/";
 
 export const addFav = (character) => {
-  const endpoint = `${localhost}/fav`;
-  return (dispatch) => {
-    axios.post(endpoint, character).then(({ data }) => {
+  try {
+    const endpoint = `${localhost}/fav`;
+    return async (dispatch) => {
+      const { data } = await axios.post(endpoint, character);
       return dispatch({
         type: ADD_FAV,
         payload: data,
       });
-    });
-  };
+    };
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 
 export const removeFav = (id) => {
   const endpoint = `${localhost}fav/${id}`;
-  return (dispatch) => {
-    axios.delete(endpoint).then(({ data }) => {
-      return dispatch({
-        type: REMOVE_FAV,
-        payload: data,
-      });
+
+  return async (dispatch) => {
+    const { data } = await axios.delete(endpoint);
+    return dispatch({
+      type: REMOVE_FAV,
+      payload: data,
     });
   };
 };

@@ -72,17 +72,16 @@ function Card({
           {/* Character image and background*/}
 
           <div className={style.backroundImage}>
-            {/* SweetAlert image*/}
 
             <img src={image} alt="" className={style.characterImage} />
             {/* Background portal*/}
 
             <div className={style.portalBackground}></div>
           </div>
-
           <div className={style.backOfBack}>
             {/* Nombre de Personaje*/}
 
+            <h2 className={style.idCard}>{id}</h2>
             <h2 className={style.nameCard}>{name}</h2>
 
             {/* Info de personajes*/}

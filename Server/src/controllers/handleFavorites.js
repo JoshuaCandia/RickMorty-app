@@ -19,8 +19,4 @@ const deleteAllFavorites = (req, res) => {
   myFavorites = [];
   res.status(200).json(myFavorites);
 };
-module.exports = {
-  postFav,
-  deleteFav,
-  deleteAllFavorites,
-};
+export { postFav, deleteFav, deleteAllFavorites };

@@ -1,6 +1,7 @@
-const express = require("express");
+import express from "express";
+import router from "./routes/routes.js";
+
 const server = express();
-const router = require("./routes/routes");
 
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -17,4 +18,4 @@ server.use(express.json());
 
 server.use("/rickandmorty", router);
 
-module.exports = server;
+export default server;

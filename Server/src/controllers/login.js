@@ -1,4 +1,4 @@
-const users = require("../utils/users");
+import users from "../utils/users.js";
 
 const login = (req, res) => {
   const { email, password } = req.query;
@@ -9,4 +9,4 @@ const login = (req, res) => {
   else res.status(200).json({ access: false });
 };
 
-module.exports = login;
+export default login;

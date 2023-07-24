@@ -1,20 +1,17 @@
-const express = require("express");
+import express from "express";
 
 const router = express.Router();
 
-const getCharById = require("../controllers/getCharById");
-const login = require("../controllers/login");
-const {
-  postFav,
-  deleteFav,
-  deleteAllFavorites,
-} = require("../controllers/handleFavorites");
+import getCharById from "../controllers/getCharById.js";
+
+import login from "../controllers/login.js";
+
+import {postFav,deleteFav,deleteAllFavorites,} from "../controllers/handleFavorites.js";
 
 //Routes
 router.get("/character/:id", getCharById);
 router.get("/login", login);
 router.post("/fav", postFav);
 router.delete("/fav", deleteAllFavorites);
-router.delete("/fav/:id", deleteFav);
 
-module.exports = router;
+export default router;

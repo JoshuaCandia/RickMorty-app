@@ -20,7 +20,7 @@ import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 //Import Axios
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "rickmorty-app-production.up.railway.app";
 
 function App() {
   //React hooks

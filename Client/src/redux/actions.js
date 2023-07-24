@@ -8,7 +8,7 @@ import {
   ORDER,
 } from "./action-types";
 
-const localhost = "http://localhost:3001/rickandmorty/";
+const localhost = "/rickandmorty/";
 
 export const addFav = (character) => {
   try {

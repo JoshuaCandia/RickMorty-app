@@ -20,6 +20,8 @@ import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 //Import Axios
 import axios from "axios";
 
+axios.defaults.baseURL = "http://localhost:3001/";
+
 function App() {
   //React hooks
   const location = useLocation();
@@ -34,7 +36,7 @@ function App() {
   const login = async (userData) => {
     try {
       const { email, password } = userData;
-      const URL = "http://localhost:3001/rickandmorty/login/";
+      const URL = "/rickandmorty/login/";
 
       const { data } = await axios.get(
         URL + `?email=${email}&password=${password}`
@@ -63,9 +65,7 @@ function App() {
   //Card search Function
   const onSearch = async (id) => {
     try {
-      const { data } = await axios(
-        `http://localhost:3001/rickandmorty/character/${id}`
-      ); //destructuring de response
+      const { data } = await axios(`/rickandmorty/character/${id}`); //destructuring de response
 
       if (data.name && !characters.find((char) => char.id === data.id)) {
         setCharacters([...characters, data]);

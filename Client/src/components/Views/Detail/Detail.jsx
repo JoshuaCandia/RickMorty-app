@@ -1,7 +1,7 @@
 //Import styles
 import style from "./Detail.module.css";
 //Import PNG
-import png from '../../../images/Rick-And-Morty-PNG-Transparent-Image.png'
+import png from "../../../images/Rick-And-Morty-PNG-Transparent-Image.png";
 
 //Import Axios
 import axios from "axios";
@@ -17,47 +17,50 @@ const Detail = () => {
   //Use Params
   const { id } = useParams();
 
-  //Use Effect 
-useEffect(() => {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-      ({ data }) => {
-        if (data.name) {
-          setCharacter(data);
-        } else {
-          window.alert("No hay personajes con ese ID");
-        }
+  //Use Effect
+  useEffect(() => {
+    axios(`/rickandmorty/character/${id}`).then(({ data }) => {
+      if (data.name) {
+        setCharacter(data);
+      } else {
+        window.alert("No hay personajes con ese ID");
       }
-    );
+    });
     return setCharacter({});
   }, [id]);
 
   return (
     <div>
       {character.name ? (
-
         <div className={style.detailDivContainer}>
-
           <div className={style.infoDetailContainer}>
             <div className={style.nameDetailChar}>
-            <li className={style.liNameChar}>{character && character.name}</li>
+              <li className={style.liNameChar}>
+                {character && character.name}
+              </li>
             </div>
-           
+
             <ul className={style.ulInfo}>
               <li className={style.liInfo}>{character && character.status}</li>
               <li className={style.liInfo}>{character && character.species}</li>
               <li className={style.liInfo}>{character && character.gender}</li>
-              <li className={style.liInfo}>{character && character.origin.name}</li>
+              <li className={style.liInfo}>
+                {character && character.origin.name}
+              </li>
             </ul>
           </div>
 
           <div className={style.ImgDetailContainer}>
-            <img className={style.imgDetail} src={character && character.image} alt="" />
+            <img
+              className={style.imgDetail}
+              src={character && character.image}
+              alt=""
+            />
           </div>
         </div>
       ) : (
         <h3>Loading......</h3>
       )}
-      
     </div>
   );
 };

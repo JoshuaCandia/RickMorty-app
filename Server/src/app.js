@@ -4,7 +4,10 @@ import router from "./routes/routes.js";
 const server = express();
 
 server.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://joshua-rick-morty.vercel.app/"
+  );
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",

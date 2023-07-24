@@ -6,7 +6,7 @@ import getCharById from "../controllers/getCharById.js";
 
 import login from "../controllers/login.js";
 
-import {postFav,deleteFav,deleteAllFavorites,} from "../controllers/handleFavorites.js";
+import { postFav, deleteAllFavorites } from "../controllers/handleFavorites.js";
 
 //Routes
 router.get("/character/:id", getCharById);

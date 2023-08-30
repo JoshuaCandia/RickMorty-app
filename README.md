@@ -24,7 +24,7 @@ Javascript, HTML, CSS,React,NodeJs,Express,PostgreSQL
 
 https://hp-api.onrender.com/
 
-##Login
+## Login
 ![image](https://github.com/JoshuaCandia/RickMorty-app/assets/99448044/905dc33b-91fb-43ba-83c7-9c23b1f1d009)
 
 ## Home Page

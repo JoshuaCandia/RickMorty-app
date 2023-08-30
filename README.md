@@ -1,3 +1,6 @@
+![image](https://github.com/JoshuaCandia/RickMorty-app/assets/99448044/cc8a40fb-60ba-411d-9ffc-1481c450f34e)
+
+
 # Rick & Morty API
 
 Este proyecto busca mostrar a los fans de Rick and Morty cada personaje que aparecen en la serie.
